@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :questions
+  post "/questions/:id/verify" => "questions#verify"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
