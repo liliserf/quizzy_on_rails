@@ -4,4 +4,8 @@ class QuestionsController < ApplicationController
     render :json => Question.all
   end
 
+  def quiz
+
+  end
+
 end
