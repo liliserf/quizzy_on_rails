@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action(:find_question, except: [:index])
+  before_action(:find_question, except: [:index, :quiz])
   
   def index
     render :json => Question.all
