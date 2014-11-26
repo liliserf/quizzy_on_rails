@@ -1,9 +1,28 @@
 <script>
-  $.ajax({
-    url: "/questions.json",
-    method: "GET"
-  }).done(function(data) {
-    
-  })
 
+  var score = 0;
+  var currentQuestion = 0;
+  function getNextQuestion() {
+    currentQuestion++;
+    $.ajax({
+      url: "/questions/" + currentQuestion + ".json",
+      method: "GET"
+    }).done(function(data) {
+      // Render question on dom below
+    })
+    
+  }
+
+
+  $.ajax({
+    url: "/questions/" + currentQuestion + "/verify.json",
+    method: "POST",
+    data: {
+      answer: "Hi! I'm the answer!"
+    }
+  }).done(function(data) {
+    if (data.correct) {
+      score++;
+    }
+  })
 </script>
