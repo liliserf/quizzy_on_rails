@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
     render :json => Question.all
   end
 
+  def quiz
+
+  end
+
   def show
     render :json => @question
   end
